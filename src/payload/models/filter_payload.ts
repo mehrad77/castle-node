@@ -69,27 +69,3 @@ export type FilterPayload =
   | SkipRequestToken
   | SkipContext
   | SkipBoth;
-
-// Test cases
-export const test1: FilterPayload = {
-  type: '$custom',
-  matching_user_id: 'test',
-  name: 'test',
-  skip_request_token_validation: true, // request_token is optional
-  skip_context_validation: true, // context is optional
-};
-
-export const test2: FilterPayload = {
-  type: '$custom',
-  request_token: 'xXxXxXx',
-  name: 'test',
-  context: {
-    ip: '1.1.1.1',
-    headers: {
-      test1: false,
-      test2: true,
-    },
-  },
-  skip_request_token_validation: false,
-  skip_context_validation: false,
-};
